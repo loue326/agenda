@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PdfController;
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -18,7 +17,6 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [EventController::class, 'dashboard'])->name('dashboard');
-    Route::get('/export-pdf', [PdfController::class, 'export'])->name('events.pdf');
     Route::resource('events', EventController::class);
     Route::resource('categories', CategoryController::class);
 });

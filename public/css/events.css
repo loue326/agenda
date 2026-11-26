@@ -72,6 +72,31 @@ body {
 .event-details dt { color: #64748b; font-weight: 700; }
 .event-details dd { margin: 0; }
 
+/* Consommation de l'API : badge d'état, erreurs et pagination dynamique. */
+.api-status {
+    display: inline-block;
+    min-height: 1em;
+    margin: 2px 0 14px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    color: #4338ca;
+    background: #eef2ff;
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+.api-status:empty { display: none; }
+.api-status.is-error { color: #b91c1c; background: #fee2e2; }
+.api-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+}
+.api-pagination span { color: #64748b; font-size: 0.9rem; }
+.page-actions .api-status { margin: 0; }
+
 /* Laravel's default pagination template uses Tailwind classes, but this app does not load Tailwind. */
 .app-content nav[role="navigation"] { display: flex; justify-content: flex-end; margin-top: 20px; }
 .app-content nav[role="navigation"] > div:first-child { display: none; }
